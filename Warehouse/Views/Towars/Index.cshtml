@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Warehouse.Models.Towar>
+
+@{
+    ViewBag.Title = "Towary";
+}
+
+<h2>Towary</h2>
+
+<p>
+    @Html.ActionLink("Dodaj Towar", "Create")
+</p>
+@using(Html.BeginForm())
+ {
+    <p>
+        Szukaj po Nazwie: @Html.TextBox("SearchString")
+        <input type="submit", value="Poszuk" />
+     </p>
+
+ }
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Nr", "Index", new { sortOrder = ViewBag.NrSortParm })
+        </th>
+        <th>
+            @Html.ActionLink("Nazwa", "Index", new { sortOrder = ViewBag.NameSortParm })
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NrSerijny)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Wymiary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Producent)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.TowarId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nazwa)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NrSerijny)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Wymiary)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Producent)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.TowarId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.TowarId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.TowarId })
+    </td>
+</tr>
+}
+
+</table>

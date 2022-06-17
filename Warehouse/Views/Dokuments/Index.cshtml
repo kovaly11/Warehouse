@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Warehouse.Models.Dokument>
+
+@{
+    ViewBag.Title = "Dokumenty";
+}
+
+<h2>Dokumenty</h2>
+
+<p>
+    @Html.ActionLink("Dodaj Dokument", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Nr
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Firma.Nazwa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pracownik.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DokumentDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Typ)
+        </th>
+        <th></th>
+    </th>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DokumentId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Firma.Nazwa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pracownik.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DokumentDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Typ)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DokumentId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DokumentId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DokumentId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,50 @@
+﻿@model Warehouse.Models.Towar
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Towar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nazwa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NrSerijny)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NrSerijny)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Wymiary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Wymiary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Producent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producent)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TowarId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

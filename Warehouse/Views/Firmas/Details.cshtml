@@ -1,0 +1,66 @@
+﻿@model Warehouse.Models.Firma
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Firma</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Adres.Ulica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adres.Ulica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nazwa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NIP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NIP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OsobaKontaktowa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OsobaKontaktowa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StonaInternetowa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StonaInternetowa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FirmaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

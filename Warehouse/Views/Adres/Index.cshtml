@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Warehouse.Models.Adres>
+
+@{
+    ViewBag.Title = "Adresy";
+}
+
+<h2>Adresy</h2>
+
+<p>
+    @Html.ActionLink("Dodaj Adres", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AdresId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ulica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NrBudynku)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KodPocztowy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Miasto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kraj)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.AdresId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ulica)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NrBudynku)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.KodPocztowy)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Miasto)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Kraj)
+    </td>
+    <td>
+        @Html.ActionLink("Zmień", "Edit", new { id = item.AdresId }) |
+        @Html.ActionLink("Usuń", "Delete", new { id = item.AdresId })
+    </td>
+</tr>
+}
+
+</table>

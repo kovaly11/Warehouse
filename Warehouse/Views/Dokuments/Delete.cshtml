@@ -1,0 +1,56 @@
+﻿@model Warehouse.Models.Dokument
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Dokument</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Firma.Nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Firma.Nazwa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pracownik.Imie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pracownik.Imie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DokumentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DokumentDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Typ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Typ)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
